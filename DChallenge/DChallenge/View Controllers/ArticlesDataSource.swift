@@ -40,4 +40,8 @@ class ArticlesDatasource: NSObject, UITableViewDataSource {
             }
         }
     }
+
+    func articleAtIndex(_ indexPath: IndexPath) -> Article {
+        return articles[indexPath.row]
+    }
 }

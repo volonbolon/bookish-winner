@@ -13,6 +13,7 @@ struct Constants {
         static let Authentication = "Authentication"
         static let ShowSubscriptionSheet = "ShowSubscriptionSheet"
         static let ShowArticles = "ShowArticles"
+        static let ShowArticle = "ShowArticle"
     }
     struct UserDefaultsKeys {
         static let AuthToken = "AuthToken"

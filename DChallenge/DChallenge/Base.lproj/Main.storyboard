@@ -114,7 +114,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="titleLabel" destination="Npo-CU-zzn" id="M1J-rO-KTy"/>
-                                    <segue destination="itR-aH-319" kind="show" id="UCl-4v-KNF"/>
+                                    <segue destination="itR-aH-319" kind="show" identifier="ShowArticle" id="UCl-4v-KNF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -134,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="351" y="621"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="nNy-MF-IZP">
             <objects>
-                <viewController id="itR-aH-319" sceneMemberID="viewController">
+                <viewController id="itR-aH-319" customClass="WebViewController" customModule="DChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="od6-GS-CUP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +161,9 @@
                         <viewLayoutGuide key="safeArea" id="0Lm-Eh-lYg"/>
                     </view>
                     <navigationItem key="navigationItem" id="vse-2W-oDv"/>
+                    <connections>
+                        <outlet property="webView" destination="qDd-4p-iVg" id="HlF-Xq-0pH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTt-NC-SpH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

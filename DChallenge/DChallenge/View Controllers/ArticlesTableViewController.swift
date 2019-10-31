@@ -21,4 +21,21 @@ class ArticlesTableViewController: UITableViewController {
             datasource.fetchArticles()
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else {
+            return
+        }
+        switch segueIdentifier {
+        case Constants.StoryboardsIdentifiers.ShowArticle:
+            if let destination = segue.destination as? WebViewController,
+                let selectedIndexPath = self.tableView.indexPathForSelectedRow,
+                let datasource = tableView.dataSource as? ArticlesDatasource {
+                let article = datasource.articleAtIndex(selectedIndexPath)
+                destination.article = article
+            }
+        default:
+            print("Unknown Segue")
+        }
+    }
 }
