@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
     struct StoryboardsIdentifiers {
         static let Authentication = "Authentication"
+        static let ShowSubscriptionSheet = "ShowSubscriptionSheet"
     }
     struct UserDefaultsKeys {
         static let AuthToken = "AuthToken"

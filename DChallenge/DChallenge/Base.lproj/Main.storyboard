@@ -16,28 +16,103 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Cut-GK-reb" kind="relationship" relationship="rootViewController" id="g0b-PT-CdI"/>
+                        <segue destination="kfn-YB-owb" kind="relationship" relationship="rootViewController" id="Bv4-DR-Wz1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D74-qr-AdH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-407" y="-78"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="uFw-k2-dEo">
+        <!--Table View Controller-->
+        <scene sceneID="hiP-gT-hL6">
             <objects>
-                <viewController id="Cut-GK-reb" customClass="ViewController" customModule="DChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4J1-s0-woN">
+                <tableViewController id="kfn-YB-owb" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LJ4-xt-qeQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="wem-T7-4tu"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="eSO-gD-Lvt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JVb-Bt-zQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CzR-9c-czO">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CzR-9c-czO" id="VeO-ec-95W">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kfn-YB-owb" id="QJd-aO-HWk"/>
+                            <outlet property="delegate" destination="kfn-YB-owb" id="KPO-03-blj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ax1-dH-gcx">
+                        <barButtonItem key="rightBarButtonItem" title="Subscribe" id="QXl-VM-Pll">
+                            <connections>
+                                <segue destination="5Xg-LV-MFo" kind="presentation" identifier="ShowSubscriptionSheet" id="UZn-fa-7B4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35X-Mi-nxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="335" y="-78"/>
+            <point key="canvasLocation" x="352" y="-78"/>
+        </scene>
+        <!--Subscribe View Controller-->
+        <scene sceneID="Rbd-k4-QYt">
+            <objects>
+                <viewController id="5Xg-LV-MFo" customClass="SubscribeViewController" customModule="DChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T9b-96-oyg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evv-23-3oF">
+                                <rect key="frame" x="151" y="91" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="5Xg-LV-MFo" eventType="touchUpInside" id="VbP-0d-lsh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tt4-nU-5GJ">
+                                <rect key="frame" x="20" y="49" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="url"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P05-hc-Mxn">
+                                <rect key="frame" x="20" y="20" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CI6-ka-dFK">
+                                <rect key="frame" x="215" y="91" width="69" height="30"/>
+                                <state key="normal" title="Subscribe"/>
+                                <connections>
+                                    <action selector="subscribe:" destination="5Xg-LV-MFo" eventType="touchUpInside" id="Cmt-wv-WHT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CI6-ka-dFK" firstAttribute="centerY" secondItem="evv-23-3oF" secondAttribute="centerY" id="9Cq-zT-1dJ"/>
+                            <constraint firstItem="P05-hc-Mxn" firstAttribute="leading" secondItem="7oC-Kw-LjZ" secondAttribute="leading" constant="20" id="Ggn-Nf-Y6v"/>
+                            <constraint firstItem="7oC-Kw-LjZ" firstAttribute="centerX" secondItem="evv-23-3oF" secondAttribute="trailing" constant="8" id="P2x-Yq-m6l"/>
+                            <constraint firstItem="tt4-nU-5GJ" firstAttribute="top" secondItem="P05-hc-Mxn" secondAttribute="bottom" constant="8" id="ceM-PB-Zbf"/>
+                            <constraint firstItem="CI6-ka-dFK" firstAttribute="leading" secondItem="evv-23-3oF" secondAttribute="trailing" constant="16" id="dTh-zX-hnB"/>
+                            <constraint firstItem="tt4-nU-5GJ" firstAttribute="leading" secondItem="7oC-Kw-LjZ" secondAttribute="leading" constant="20" id="hEX-iP-A8K"/>
+                            <constraint firstItem="7oC-Kw-LjZ" firstAttribute="trailing" secondItem="tt4-nU-5GJ" secondAttribute="trailing" constant="20" id="kTg-DL-J3y"/>
+                            <constraint firstItem="evv-23-3oF" firstAttribute="top" secondItem="tt4-nU-5GJ" secondAttribute="bottom" constant="8" id="qVF-jW-fsr"/>
+                            <constraint firstItem="P05-hc-Mxn" firstAttribute="top" secondItem="7oC-Kw-LjZ" secondAttribute="top" constant="20" id="vQV-9u-yNZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7oC-Kw-LjZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="subscriptionTextField" destination="tt4-nU-5GJ" id="BMG-gB-cPg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6M3-OC-xaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118.840579710145" y="-78.348214285714278"/>
         </scene>
     </scenes>
 </document>

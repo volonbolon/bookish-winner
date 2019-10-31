@@ -36,6 +36,7 @@ struct AuthenticationNetworkManager {
             "user": username,
             "password": pswd
         ]
+
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: payload)
         } catch {

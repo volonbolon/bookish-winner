@@ -11,7 +11,7 @@ import Foundation
 // Errors used by Network Session and Manager
 enum NetworkControllerError: Error {
     case invalidURL(String)
-    case invalidPayload(URL)
+    case invalidPayload(URL?)
     case forwarded(Error)
 }
 
@@ -23,5 +23,6 @@ enum NetworkControllerError: Error {
 protocol NetworkSession {
     typealias NetworkSessionCompletionHandler = (Either<NetworkControllerError, Data>) -> Void
 
-    func post(request: URLRequest, completionHandler:@escaping NetworkSessionCompletionHandler)
+    func post(request: URLRequest,
+              completionHandler:@escaping NetworkSessionCompletionHandler)
 }

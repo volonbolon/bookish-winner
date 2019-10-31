@@ -18,8 +18,10 @@
 		B0E35FB0236B213100335546 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FAF236B213100335546 /* AuthenticationManager.swift */; };
 		B0E35FB2236B223400335546 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FB1236B223400335546 /* URLConstants.swift */; };
 		B0E35FB4236B2E8800335546 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FB3236B2E8800335546 /* Constants.swift */; };
+		B0E35FB6236B331B00335546 /* FeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FB5236B331B00335546 /* FeedsTableViewController.swift */; };
+		B0E35FB8236B345300335546 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FB7236B345300335546 /* SubscribeViewController.swift */; };
+		B0E35FBB236B3A7500335546 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FBA236B3A7500335546 /* Feed.swift */; };
 		B0E72D84236B05B2006A4F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E72D83236B05B2006A4F2C /* AppDelegate.swift */; };
-		B0E72D88236B05B2006A4F2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E72D87236B05B2006A4F2C /* ViewController.swift */; };
 		B0E72D8B236B05B2006A4F2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E72D89236B05B2006A4F2C /* Main.storyboard */; };
 		B0E72D8D236B05B4006A4F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E72D8C236B05B4006A4F2C /* Assets.xcassets */; };
 		B0E72D90236B05B4006A4F2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E72D8E236B05B4006A4F2C /* LaunchScreen.storyboard */; };
@@ -56,9 +58,11 @@
 		B0E35FAF236B213100335546 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		B0E35FB1236B223400335546 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
 		B0E35FB3236B2E8800335546 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B0E35FB5236B331B00335546 /* FeedsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsTableViewController.swift; sourceTree = "<group>"; };
+		B0E35FB7236B345300335546 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
+		B0E35FBA236B3A7500335546 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		B0E72D80236B05B2006A4F2C /* DChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E72D83236B05B2006A4F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0E72D87236B05B2006A4F2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B0E72D8A236B05B2006A4F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0E72D8C236B05B4006A4F2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0E72D8F236B05B4006A4F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,8 +129,18 @@
 				B0E35F6B236B17C200335546 /* Authentication.storyboard */,
 				B0E35F6F236B19C800335546 /* AuthenticationViewController.swift */,
 				B0E35FAD236B1C8400335546 /* SceneDelegate.swift */,
+				B0E35FB5236B331B00335546 /* FeedsTableViewController.swift */,
+				B0E35FB7236B345300335546 /* SubscribeViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B0E35FB9236B3A6800335546 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0E35FBA236B3A7500335546 /* Feed.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B0E72D77236B05B2006A4F2C = {
@@ -152,10 +166,10 @@
 		B0E72D82236B05B2006A4F2C /* DChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B0E35FB9236B3A6800335546 /* Models */,
 				B0E35F68236B16C200335546 /* View Controllers */,
 				B0E35F5E236B159D00335546 /* Helpers */,
 				B0E72D83236B05B2006A4F2C /* AppDelegate.swift */,
-				B0E72D87236B05B2006A4F2C /* ViewController.swift */,
 				B0E72D89236B05B2006A4F2C /* Main.storyboard */,
 				B0E72D8C236B05B4006A4F2C /* Assets.xcassets */,
 				B0E72D8E236B05B4006A4F2C /* LaunchScreen.storyboard */,
@@ -337,14 +351,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0E35F65236B162400335546 /* URLSession+NetworkInterface.swift in Sources */,
+				B0E35FB6236B331B00335546 /* FeedsTableViewController.swift in Sources */,
 				B0E35F67236B165B00335546 /* URL+Helpers.swift in Sources */,
+				B0E35FBB236B3A7500335546 /* Feed.swift in Sources */,
 				B0E35FAE236B1C8400335546 /* SceneDelegate.swift in Sources */,
 				B0E35FB0236B213100335546 /* AuthenticationManager.swift in Sources */,
 				B0E35F63236B15DD00335546 /* Either.swift in Sources */,
 				B0E35F6A236B16F000335546 /* NetworkManager.swift in Sources */,
 				B0E35F70236B19C800335546 /* AuthenticationViewController.swift in Sources */,
-				B0E72D88236B05B2006A4F2C /* ViewController.swift in Sources */,
 				B0E35FB2236B223400335546 /* URLConstants.swift in Sources */,
+				B0E35FB8236B345300335546 /* SubscribeViewController.swift in Sources */,
 				B0E72D84236B05B2006A4F2C /* AppDelegate.swift in Sources */,
 				B0E35F61236B15B800335546 /* NetworkSession.swift in Sources */,
 				B0E35FB4236B2E8800335546 /* Constants.swift in Sources */,
