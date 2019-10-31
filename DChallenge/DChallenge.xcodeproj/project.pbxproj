@@ -23,6 +23,7 @@
 		B0E35FBB236B3A7500335546 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FBA236B3A7500335546 /* Feed.swift */; };
 		B0E35FBF236B490500335546 /* FeedsTableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FBE236B490500335546 /* FeedsTableDatasource.swift */; };
 		B0E35FC2236B4A4100335546 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FC1236B4A4100335546 /* FeedTableViewCell.swift */; };
+		B0E35FC4236B606E00335546 /* FeedsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FC3236B606E00335546 /* FeedsTableViewDelegate.swift */; };
 		B0E72D84236B05B2006A4F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E72D83236B05B2006A4F2C /* AppDelegate.swift */; };
 		B0E72D8B236B05B2006A4F2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E72D89236B05B2006A4F2C /* Main.storyboard */; };
 		B0E72D8D236B05B4006A4F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E72D8C236B05B4006A4F2C /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		B0E35FBA236B3A7500335546 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		B0E35FBE236B490500335546 /* FeedsTableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsTableDatasource.swift; sourceTree = "<group>"; };
 		B0E35FC1236B4A4100335546 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		B0E35FC3236B606E00335546 /* FeedsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsTableViewDelegate.swift; sourceTree = "<group>"; };
 		B0E72D80236B05B2006A4F2C /* DChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E72D83236B05B2006A4F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0E72D8A236B05B2006A4F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				B0E35FB5236B331B00335546 /* FeedsTableViewController.swift */,
 				B0E35FB7236B345300335546 /* SubscribeViewController.swift */,
 				B0E35FBE236B490500335546 /* FeedsTableDatasource.swift */,
+				B0E35FC3236B606E00335546 /* FeedsTableViewDelegate.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				B0E35FBB236B3A7500335546 /* Feed.swift in Sources */,
 				B0E35FAE236B1C8400335546 /* SceneDelegate.swift in Sources */,
 				B0E35FB0236B213100335546 /* AuthenticationManager.swift in Sources */,
+				B0E35FC4236B606E00335546 /* FeedsTableViewDelegate.swift in Sources */,
 				B0E35F63236B15DD00335546 /* Either.swift in Sources */,
 				B0E35F6A236B16F000335546 /* NetworkManager.swift in Sources */,
 				B0E35FBF236B490500335546 /* FeedsTableDatasource.swift in Sources */,

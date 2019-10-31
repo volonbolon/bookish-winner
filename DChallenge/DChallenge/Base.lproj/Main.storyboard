@@ -48,6 +48,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="1kz-bs-4E1" secondAttribute="bottom" constant="11" id="TDh-W2-NI3"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="1kz-bs-4E1" secondAttribute="trailing" constant="20" id="Won-dx-pnj"/>
                                         <constraint firstItem="1kz-bs-4E1" firstAttribute="top" secondItem="VeO-ec-95W" secondAttribute="top" constant="11" id="kMs-uS-H4M"/>
                                         <constraint firstItem="1kz-bs-4E1" firstAttribute="leading" secondItem="VeO-ec-95W" secondAttribute="leading" constant="20" id="kz9-3D-QQO"/>
                                     </constraints>
@@ -59,7 +60,7 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="pes-Gq-zPY" id="qF3-SG-fSe"/>
-                            <outlet property="delegate" destination="kfn-YB-owb" id="KPO-03-blj"/>
+                            <outlet property="delegate" destination="gE3-Lc-iVQ" id="wnb-oR-QWc"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ax1-dH-gcx">
@@ -71,6 +72,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35X-Mi-nxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="gE3-Lc-iVQ" customClass="FeedsTableViewDelegate" customModule="DChallenge" customModuleProvider="target"/>
                 <customObject id="pes-Gq-zPY" customClass="FeedsDatasource" customModule="DChallenge" customModuleProvider="target">
                     <connections>
                         <outlet property="tableView" destination="LJ4-xt-qeQ" id="ea1-nR-dEH"/>
@@ -118,10 +120,13 @@
                             <constraint firstItem="CI6-ka-dFK" firstAttribute="centerY" secondItem="evv-23-3oF" secondAttribute="centerY" id="9Cq-zT-1dJ"/>
                             <constraint firstItem="P05-hc-Mxn" firstAttribute="leading" secondItem="7oC-Kw-LjZ" secondAttribute="leading" constant="20" id="Ggn-Nf-Y6v"/>
                             <constraint firstItem="7oC-Kw-LjZ" firstAttribute="centerX" secondItem="evv-23-3oF" secondAttribute="trailing" constant="8" id="P2x-Yq-m6l"/>
+                            <constraint firstItem="7oC-Kw-LjZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CI6-ka-dFK" secondAttribute="trailing" constant="20" id="YJz-Yt-VMg"/>
                             <constraint firstItem="tt4-nU-5GJ" firstAttribute="top" secondItem="P05-hc-Mxn" secondAttribute="bottom" constant="8" id="ceM-PB-Zbf"/>
                             <constraint firstItem="CI6-ka-dFK" firstAttribute="leading" secondItem="evv-23-3oF" secondAttribute="trailing" constant="16" id="dTh-zX-hnB"/>
+                            <constraint firstItem="evv-23-3oF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7oC-Kw-LjZ" secondAttribute="leading" constant="20" id="gU4-By-L3M"/>
                             <constraint firstItem="tt4-nU-5GJ" firstAttribute="leading" secondItem="7oC-Kw-LjZ" secondAttribute="leading" constant="20" id="hEX-iP-A8K"/>
                             <constraint firstItem="7oC-Kw-LjZ" firstAttribute="trailing" secondItem="tt4-nU-5GJ" secondAttribute="trailing" constant="20" id="kTg-DL-J3y"/>
+                            <constraint firstItem="7oC-Kw-LjZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P05-hc-Mxn" secondAttribute="trailing" constant="20" id="nUX-KD-6qV"/>
                             <constraint firstItem="evv-23-3oF" firstAttribute="top" secondItem="tt4-nU-5GJ" secondAttribute="bottom" constant="8" id="qVF-jW-fsr"/>
                             <constraint firstItem="P05-hc-Mxn" firstAttribute="top" secondItem="7oC-Kw-LjZ" secondAttribute="top" constant="20" id="vQV-9u-yNZ"/>
                         </constraints>

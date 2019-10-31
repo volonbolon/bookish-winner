@@ -16,5 +16,6 @@ struct URLConstants {
     struct Feeds {
         static let Subscribe = "http://167.99.162.146/feeds/add"
         static let Fetch = "http://167.99.162.146/feeds"
+        static let Delete = "http://167.99.162.146/feeds/"
     }
 }

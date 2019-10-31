@@ -17,6 +17,39 @@ class NetworkManager {
         self.session = session
     }
 
+    func deleteFeed(feed: Feed, completionHandler: @escaping FeedsCompletionHandler) {
+        let sud = UserDefaults.standard
+        let urlString = URLConstants.Feeds.Delete
+        guard let token = sud.object(forKey: Constants.UserDefaultsKeys.AuthToken) else {
+            let error = NetworkControllerError.invalidURL(urlString)
+            let payload = Either<NetworkControllerError, Feeds>.left(error)
+            completionHandler(payload)
+
+            return
+        }
+
+        let urlWithId = urlString + String(feed.feedId)
+        guard let url = URL(string: urlWithId) else {
+            let error = NetworkControllerError.invalidURL(urlString)
+            let payload = Either<NetworkControllerError, Feeds>.left(error)
+            completionHandler(payload)
+
+            return
+        }
+
+        var request = URLRequest(url: url)
+        let bearer = "Bearer \(token)"
+        request.addValue(bearer, forHTTPHeaderField: "Authorization")
+        request.httpMethod = HTTPVerbs.DELETE
+
+        session.delete(request: request) { (error: NetworkControllerError?) in
+            if error != nil {
+                let errorPayload = Either<NetworkControllerError, Feeds>.left(error!)
+                completionHandler(errorPayload)
+            }
+        }
+    }
+
     func fetchSubscriptions(completionHandler: @escaping FeedsCompletionHandler) {
         let sud = UserDefaults.standard
         let urlString = URLConstants.Feeds.Fetch

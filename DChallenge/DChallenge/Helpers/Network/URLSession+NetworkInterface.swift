@@ -9,6 +9,19 @@
 import Foundation
 
 extension URLSession: NetworkSession {
+    func delete(request: URLRequest, completionHandler: @escaping (NetworkControllerError?) -> Void) {
+        let task = dataTask(with: request) { (_: Data?, res: URLResponse?, error: Error?) in
+            guard error == nil else {
+                let networkError = NetworkControllerError.forwarded(error!)
+                completionHandler(networkError)
+
+                return
+            }
+            completionHandler(nil)
+        }
+        task.resume()
+    }
+
     func fetch(request: URLRequest, completionHandler: @escaping NetworkSession.NetworkSessionCompletionHandler) {
         let task = self.dataTask(with: request) { (data: Data?, _: URLResponse?, error: Error?) in
             guard error == nil else {

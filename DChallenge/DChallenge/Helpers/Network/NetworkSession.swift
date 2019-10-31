@@ -23,6 +23,7 @@ enum NetworkControllerError: Error {
 protocol NetworkSession {
     typealias NetworkSessionCompletionHandler = (Either<NetworkControllerError, Data>) -> Void
 
+    func delete(request: URLRequest, completionHandler: @escaping (NetworkControllerError?) -> Void)
     func fetch(request: URLRequest,
                completionHandler: @escaping NetworkSession.NetworkSessionCompletionHandler)
     func post(request: URLRequest,

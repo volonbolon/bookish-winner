@@ -9,7 +9,7 @@
 import Foundation
 
 struct Feed: Codable {
-    var feedId: Int?
+    var feedId: Int
     var title: String
     var url: URL
 
