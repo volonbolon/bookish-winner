@@ -26,6 +26,23 @@ class FeedsDatasource: NSObject, UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView,
+                   canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let feedToRemove = self.feeds.remove(at: indexPath.row)
+            networkManager.deleteFeed(feed: feedToRemove) { (_: Either<NetworkControllerError, NetworkManager.Feeds>) in
+                print("Deleted")
+            }
+            self.tableView.reloadData()
+        }
+    }
+
     func appendFeed(feed: Feed) {
         self.feeds.append(feed)
         self.tableView.reloadData()
@@ -45,20 +62,7 @@ class FeedsDatasource: NSObject, UITableViewDataSource {
         }
     }
 
-    func tableView(_ tableView: UITableView,
-                   canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCell.EditingStyle,
-                   forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let feedToRemove = self.feeds.remove(at: indexPath.row)
-            networkManager.deleteFeed(feed: feedToRemove) { (_: Either<NetworkControllerError, NetworkManager.Feeds>) in
-                print("Deleted")
-            }
-            self.tableView.reloadData()
-        }
+    func feedAtIndex(indexPath: IndexPath) -> Feed {
+        return feeds[indexPath.row]
     }
 }

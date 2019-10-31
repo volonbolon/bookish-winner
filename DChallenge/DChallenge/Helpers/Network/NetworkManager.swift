@@ -11,7 +11,9 @@ import Foundation
 class NetworkManager {
     private let session: NetworkSession // here we can insert our own custom session
     typealias Feeds = [Feed]
+    typealias Articles = [Article]
     typealias FeedsCompletionHandler = (Either<NetworkControllerError, Feeds>) -> Void
+    typealias ArticlesCompletionHandler = (Either<NetworkControllerError, Articles>) -> Void
 
     init(session: NetworkSession = URLSession.shared) {
         self.session = session
@@ -85,6 +87,57 @@ class NetworkManager {
                 } catch {
                     let networkError = NetworkControllerError.forwarded(error)
                     let payload = Either<NetworkControllerError, Feeds>.left(networkError)
+                    completionHandler(payload)
+                }
+            }
+        }
+    }
+
+    func fetchArticles(feed: Feed, completionHandler: @escaping ArticlesCompletionHandler) {
+        let sud = UserDefaults.standard
+        let urlString = URLConstants.Feeds.Articles
+        guard let token = sud.object(forKey: Constants.UserDefaultsKeys.AuthToken) else {
+            let error = NetworkControllerError.invalidURL(urlString)
+            let payload = Either<NetworkControllerError, Articles>.left(error)
+            completionHandler(payload)
+
+            return
+        }
+
+        let urlWithId = urlString + String(feed.feedId) + "/articles"
+        guard let url = URL(string: urlWithId) else {
+            let error = NetworkControllerError.invalidURL(urlString)
+            let payload = Either<NetworkControllerError, Articles>.left(error)
+            completionHandler(payload)
+
+            return
+        }
+
+        var request = URLRequest(url: url)
+        let bearer = "Bearer \(token)"
+        request.addValue(bearer, forHTTPHeaderField: "Authorization")
+        request.httpMethod = HTTPVerbs.GET
+
+        session.fetch(request: request) { (result: Either<NetworkControllerError, Data>) in
+            switch result {
+            case .left(let error):
+                let errorPayload = Either<NetworkControllerError, Articles>.left(error)
+                completionHandler(errorPayload)
+            case .right(let data):
+                do {
+                    if let input = try JSONSerialization.jsonObject(with: data,
+                                                                    options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any] { // swiftlint:disable:this line_length
+                        if let rawArticles = input["articles"] as? [[String: Any]] {
+                            let articles = rawArticles.map({ (rawArticle: [String: Any]) -> Article in
+                                return Article(rawInput: rawArticle)!
+                            })
+                            let payload = Either<NetworkControllerError, Articles>.right(articles)
+                            completionHandler(payload)
+                        }
+                    }
+                } catch {
+                    let networkError = NetworkControllerError.forwarded(error)
+                    let payload = Either<NetworkControllerError, Articles>.left(networkError)
                     completionHandler(payload)
                 }
             }

@@ -23,7 +23,11 @@
 		B0E35FBB236B3A7500335546 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FBA236B3A7500335546 /* Feed.swift */; };
 		B0E35FBF236B490500335546 /* FeedsTableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FBE236B490500335546 /* FeedsTableDatasource.swift */; };
 		B0E35FC2236B4A4100335546 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FC1236B4A4100335546 /* FeedTableViewCell.swift */; };
-		B0E35FC4236B606E00335546 /* FeedsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FC3236B606E00335546 /* FeedsTableViewDelegate.swift */; };
+		B0E35FC6236B65F300335546 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FC5236B65F300335546 /* ArticlesTableViewController.swift */; };
+		B0E35FCA236B66E300335546 /* ArticlesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FC9236B66E300335546 /* ArticlesDataSource.swift */; };
+		B0E35FCC236B672200335546 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FCB236B672200335546 /* Article.swift */; };
+		B0E35FCE236B680D00335546 /* ArticlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FCD236B680D00335546 /* ArticlesTableViewCell.swift */; };
+		B0E35FD0236B6DCB00335546 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FCF236B6DCB00335546 /* WebViewController.swift */; };
 		B0E72D84236B05B2006A4F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E72D83236B05B2006A4F2C /* AppDelegate.swift */; };
 		B0E72D8B236B05B2006A4F2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E72D89236B05B2006A4F2C /* Main.storyboard */; };
 		B0E72D8D236B05B4006A4F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E72D8C236B05B4006A4F2C /* Assets.xcassets */; };
@@ -66,7 +70,11 @@
 		B0E35FBA236B3A7500335546 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		B0E35FBE236B490500335546 /* FeedsTableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsTableDatasource.swift; sourceTree = "<group>"; };
 		B0E35FC1236B4A4100335546 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		B0E35FC3236B606E00335546 /* FeedsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsTableViewDelegate.swift; sourceTree = "<group>"; };
+		B0E35FC5236B65F300335546 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
+		B0E35FC9236B66E300335546 /* ArticlesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDataSource.swift; sourceTree = "<group>"; };
+		B0E35FCB236B672200335546 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		B0E35FCD236B680D00335546 /* ArticlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewCell.swift; sourceTree = "<group>"; };
+		B0E35FCF236B6DCB00335546 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B0E72D80236B05B2006A4F2C /* DChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E72D83236B05B2006A4F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0E72D8A236B05B2006A4F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,7 +146,9 @@
 				B0E35FB5236B331B00335546 /* FeedsTableViewController.swift */,
 				B0E35FB7236B345300335546 /* SubscribeViewController.swift */,
 				B0E35FBE236B490500335546 /* FeedsTableDatasource.swift */,
-				B0E35FC3236B606E00335546 /* FeedsTableViewDelegate.swift */,
+				B0E35FC5236B65F300335546 /* ArticlesTableViewController.swift */,
+				B0E35FC9236B66E300335546 /* ArticlesDataSource.swift */,
+				B0E35FCF236B6DCB00335546 /* WebViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -147,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				B0E35FBA236B3A7500335546 /* Feed.swift */,
+				B0E35FCB236B672200335546 /* Article.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B0E35FC1236B4A4100335546 /* FeedTableViewCell.swift */,
+				B0E35FCD236B680D00335546 /* ArticlesTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -367,18 +379,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E35FCE236B680D00335546 /* ArticlesTableViewCell.swift in Sources */,
 				B0E35F65236B162400335546 /* URLSession+NetworkInterface.swift in Sources */,
 				B0E35FB6236B331B00335546 /* FeedsTableViewController.swift in Sources */,
 				B0E35F67236B165B00335546 /* URL+Helpers.swift in Sources */,
+				B0E35FD0236B6DCB00335546 /* WebViewController.swift in Sources */,
 				B0E35FBB236B3A7500335546 /* Feed.swift in Sources */,
 				B0E35FAE236B1C8400335546 /* SceneDelegate.swift in Sources */,
+				B0E35FCA236B66E300335546 /* ArticlesDataSource.swift in Sources */,
 				B0E35FB0236B213100335546 /* AuthenticationManager.swift in Sources */,
-				B0E35FC4236B606E00335546 /* FeedsTableViewDelegate.swift in Sources */,
 				B0E35F63236B15DD00335546 /* Either.swift in Sources */,
 				B0E35F6A236B16F000335546 /* NetworkManager.swift in Sources */,
 				B0E35FBF236B490500335546 /* FeedsTableDatasource.swift in Sources */,
 				B0E35FC2236B4A4100335546 /* FeedTableViewCell.swift in Sources */,
+				B0E35FCC236B672200335546 /* Article.swift in Sources */,
 				B0E35F70236B19C800335546 /* AuthenticationViewController.swift in Sources */,
+				B0E35FC6236B65F300335546 /* ArticlesTableViewController.swift in Sources */,
 				B0E35FB2236B223400335546 /* URLConstants.swift in Sources */,
 				B0E35FB8236B345300335546 /* SubscribeViewController.swift in Sources */,
 				B0E72D84236B05B2006A4F2C /* AppDelegate.swift in Sources */,

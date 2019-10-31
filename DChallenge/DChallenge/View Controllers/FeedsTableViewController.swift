@@ -31,6 +31,13 @@ class FeedsTableViewController: UITableViewController {
             if let destination = segue.destination as? SubscribeViewController {
                 destination.delegate = self
             }
+        case Constants.StoryboardsIdentifiers.ShowArticles:
+            if let destination = segue.destination as? ArticlesTableViewController,
+                let selectedIndexPath = self.tableView.indexPathForSelectedRow,
+                let datasource = tableView.dataSource as? FeedsDatasource {
+                let feed = datasource.feedAtIndex(indexPath: selectedIndexPath)
+                destination.feed = feed
+            }
         default:
             print("Unknown Segue")
         }

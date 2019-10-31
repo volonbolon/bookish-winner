@@ -10,7 +10,7 @@ import Foundation
 
 extension URLSession: NetworkSession {
     func delete(request: URLRequest, completionHandler: @escaping (NetworkControllerError?) -> Void) {
-        let task = dataTask(with: request) { (_: Data?, res: URLResponse?, error: Error?) in
+        let task = dataTask(with: request) { (_: Data?, _: URLResponse?, error: Error?) in
             guard error == nil else {
                 let networkError = NetworkControllerError.forwarded(error!)
                 completionHandler(networkError)
