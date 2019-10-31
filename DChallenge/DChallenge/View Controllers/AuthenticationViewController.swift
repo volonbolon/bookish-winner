@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol AuthenticationDelegate: class {
+    func userSuccessfullyAuthenticated()
+}
+
 class AuthenticationViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+
+    weak var delegate: AuthenticationDelegate?
 
     fileprivate let networkManager = AuthenticationNetworkManager()
 
@@ -56,7 +62,9 @@ class AuthenticationViewController: UIViewController {
                 let sud = UserDefaults.standard
                 sud.set(token, forKey: Constants.UserDefaultsKeys.AuthToken)
                 DispatchQueue.main.async {
-                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    if let delegate = self.delegate {
+                        delegate.userSuccessfullyAuthenticated()
+                    }
                 }
             }
         }

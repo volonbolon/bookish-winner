@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="-407" y="-78"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Feeds Table View Controller-->
         <scene sceneID="hiP-gT-hL6">
             <objects>
-                <tableViewController id="kfn-YB-owb" sceneMemberID="viewController">
+                <tableViewController id="kfn-YB-owb" customClass="FeedsTableViewController" customModule="DChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LJ4-xt-qeQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,23 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CzR-9c-czO" id="VeO-ec-95W">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kz-bs-4E1">
+                                            <rect key="frame" x="20" y="11" width="42" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="1kz-bs-4E1" secondAttribute="bottom" constant="11" id="TDh-W2-NI3"/>
+                                        <constraint firstItem="1kz-bs-4E1" firstAttribute="top" secondItem="VeO-ec-95W" secondAttribute="top" constant="11" id="kMs-uS-H4M"/>
+                                        <constraint firstItem="1kz-bs-4E1" firstAttribute="leading" secondItem="VeO-ec-95W" secondAttribute="leading" constant="20" id="kz9-3D-QQO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="1kz-bs-4E1" id="RrL-zN-JBo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -55,7 +71,11 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35X-Mi-nxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="pes-Gq-zPY" customClass="FeedsDatasource" customModule="DChallenge" customModuleProvider="target"/>
+                <customObject id="pes-Gq-zPY" customClass="FeedsDatasource" customModule="DChallenge" customModuleProvider="target">
+                    <connections>
+                        <outlet property="tableView" destination="LJ4-xt-qeQ" id="ea1-nR-dEH"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="352" y="-78"/>
         </scene>

@@ -12,21 +12,13 @@ class FeedsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard presentAuthenticationViewControllerIfNeeded() else {
+        guard !presentAuthenticationViewControllerIfNeeded() else {
             return
         }
-    }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if let datasource = tableView.dataSource as? FeedsDatasource {
+            datasource.fetchFeeds()
+        }
     }
 
     /*
@@ -92,7 +84,10 @@ class FeedsTableViewController: UITableViewController {
 
 extension FeedsTableViewController: SubscriptionDelegate {
     func subscribedToFeed(_ feed: Feed) {
-        self.tableView.reloadData()
+        if let datasource = tableView.dataSource as? FeedsDatasource {
+            datasource.appendFeed(feed: feed)
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -107,10 +102,20 @@ extension FeedsTableViewController { // MARK: - Helpers
         }
 
         let storyboard = UIStoryboard(name: "Authentication", bundle: nil)
-        if let authenticationViewController = storyboard.instantiateInitialViewController() {
+        if let authenticationViewController = storyboard.instantiateInitialViewController() as? AuthenticationViewController {
+            authenticationViewController.delegate = self
             authenticationViewController.modalPresentationStyle = .currentContext
             parent?.present(authenticationViewController, animated: true, completion: nil)
         }
         return true
+    }
+}
+
+extension FeedsTableViewController: AuthenticationDelegate {
+    func userSuccessfullyAuthenticated() {
+        dismiss(animated: true, completion: nil)
+        if let datasource = tableView.dataSource as? FeedsDatasource {
+            datasource.fetchFeeds()
+        }
     }
 }

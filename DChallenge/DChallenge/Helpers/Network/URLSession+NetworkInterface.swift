@@ -10,7 +10,7 @@ import Foundation
 
 extension URLSession: NetworkSession {
     func fetch(request: URLRequest, completionHandler: @escaping NetworkSession.NetworkSessionCompletionHandler) {
-        let task = dataTask(with: request) { (data: Data?, _: URLResponse?, error: Error?) in
+        let task = self.dataTask(with: request) { (data: Data?, _: URLResponse?, error: Error?) in
             guard error == nil else {
                 let networkError = NetworkControllerError.forwarded(error!)
                 let payload = Either<NetworkControllerError, Data>.left(networkError)

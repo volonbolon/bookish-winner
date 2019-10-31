@@ -17,6 +17,47 @@ class NetworkManager {
         self.session = session
     }
 
+    func fetchSubscriptions(completionHandler: @escaping FeedsCompletionHandler) {
+        let sud = UserDefaults.standard
+        let urlString = URLConstants.Feeds.Fetch
+        guard let url = URL(string: urlString),
+            let token = sud.object(forKey: Constants.UserDefaultsKeys.AuthToken) else {
+            let error = NetworkControllerError.invalidURL(urlString)
+            let payload = Either<NetworkControllerError, Feeds>.left(error)
+            completionHandler(payload)
+
+            return
+        }
+
+        var request = URLRequest(url: url)
+        let bearer = "Bearer \(token)"
+        request.addValue(bearer, forHTTPHeaderField: "Authorization")
+        request.httpMethod = HTTPVerbs.GET
+
+        session.fetch(request: request) { (result: Either<NetworkControllerError, Data>) in
+            switch result {
+            case .left(let error):
+                let errorPayload = Either<NetworkControllerError, Feeds>.left(error)
+                completionHandler(errorPayload)
+            case .right(let data):
+                do {
+                    if let input = try JSONSerialization.jsonObject(with: data,
+                                                                    options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String: Any]] { // swiftlint:disable:this line_length
+                        let feeds = input.map({ (rawFeed: [String: Any]) -> Feed in
+                            return Feed(rawInput: rawFeed)!
+                        })
+                        let payload = Either<NetworkControllerError, Feeds>.right(feeds)
+                        completionHandler(payload)
+                    }
+                } catch {
+                    let networkError = NetworkControllerError.forwarded(error)
+                    let payload = Either<NetworkControllerError, Feeds>.left(networkError)
+                    completionHandler(payload)
+                }
+            }
+        }
+    }
+
     func subscribeToFeed(feedURL: String, completionHandler: @escaping FeedsCompletionHandler) {
         let sud = UserDefaults.standard
         let urlString = URLConstants.Feeds.Subscribe
