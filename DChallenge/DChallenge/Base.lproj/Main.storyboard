@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CzR-9c-czO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedTableViewCell" id="CzR-9c-czO" customClass="FeedTableViewCell" customModule="DChallenge" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CzR-9c-czO" id="VeO-ec-95W">
@@ -42,7 +42,7 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="kfn-YB-owb" id="QJd-aO-HWk"/>
+                            <outlet property="dataSource" destination="pes-Gq-zPY" id="qF3-SG-fSe"/>
                             <outlet property="delegate" destination="kfn-YB-owb" id="KPO-03-blj"/>
                         </connections>
                     </tableView>
@@ -55,6 +55,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35X-Mi-nxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="pes-Gq-zPY" customClass="FeedsDatasource" customModule="DChallenge" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="352" y="-78"/>
         </scene>

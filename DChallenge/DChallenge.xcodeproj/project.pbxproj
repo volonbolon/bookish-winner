@@ -21,6 +21,8 @@
 		B0E35FB6236B331B00335546 /* FeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FB5236B331B00335546 /* FeedsTableViewController.swift */; };
 		B0E35FB8236B345300335546 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FB7236B345300335546 /* SubscribeViewController.swift */; };
 		B0E35FBB236B3A7500335546 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FBA236B3A7500335546 /* Feed.swift */; };
+		B0E35FBF236B490500335546 /* FeedsTableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FBE236B490500335546 /* FeedsTableDatasource.swift */; };
+		B0E35FC2236B4A4100335546 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E35FC1236B4A4100335546 /* FeedTableViewCell.swift */; };
 		B0E72D84236B05B2006A4F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E72D83236B05B2006A4F2C /* AppDelegate.swift */; };
 		B0E72D8B236B05B2006A4F2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E72D89236B05B2006A4F2C /* Main.storyboard */; };
 		B0E72D8D236B05B4006A4F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E72D8C236B05B4006A4F2C /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		B0E35FB5236B331B00335546 /* FeedsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsTableViewController.swift; sourceTree = "<group>"; };
 		B0E35FB7236B345300335546 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		B0E35FBA236B3A7500335546 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		B0E35FBE236B490500335546 /* FeedsTableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsTableDatasource.swift; sourceTree = "<group>"; };
+		B0E35FC1236B4A4100335546 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		B0E72D80236B05B2006A4F2C /* DChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E72D83236B05B2006A4F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0E72D8A236B05B2006A4F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				B0E35FAD236B1C8400335546 /* SceneDelegate.swift */,
 				B0E35FB5236B331B00335546 /* FeedsTableViewController.swift */,
 				B0E35FB7236B345300335546 /* SubscribeViewController.swift */,
+				B0E35FBE236B490500335546 /* FeedsTableDatasource.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -141,6 +146,14 @@
 				B0E35FBA236B3A7500335546 /* Feed.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B0E35FC0236B4A2400335546 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0E35FC1236B4A4100335546 /* FeedTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B0E72D77236B05B2006A4F2C = {
@@ -166,6 +179,7 @@
 		B0E72D82236B05B2006A4F2C /* DChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B0E35FC0236B4A2400335546 /* Views */,
 				B0E35FB9236B3A6800335546 /* Models */,
 				B0E35F68236B16C200335546 /* View Controllers */,
 				B0E35F5E236B159D00335546 /* Helpers */,
@@ -358,6 +372,8 @@
 				B0E35FB0236B213100335546 /* AuthenticationManager.swift in Sources */,
 				B0E35F63236B15DD00335546 /* Either.swift in Sources */,
 				B0E35F6A236B16F000335546 /* NetworkManager.swift in Sources */,
+				B0E35FBF236B490500335546 /* FeedsTableDatasource.swift in Sources */,
+				B0E35FC2236B4A4100335546 /* FeedTableViewCell.swift in Sources */,
 				B0E35F70236B19C800335546 /* AuthenticationViewController.swift in Sources */,
 				B0E35FB2236B223400335546 /* URLConstants.swift in Sources */,
 				B0E35FB8236B345300335546 /* SubscribeViewController.swift in Sources */,
